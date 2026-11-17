@@ -1,0 +1,51 @@
+# OS and editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/.env.local
+frontend/npm-debug.log*
+frontend/yarn-error.log*
+
+# Backend
+backend/.phpunit.cache/
+backend/.phpactor.json
+backend/.phpunit.result.cache
+backend/node_modules/
+backend/public/build/
+backend/public/hot/
+backend/public/storage/
+backend/storage/*.key
+backend/storage/pail/
+backend/vendor/
+backend/.env
+backend/.env.backup
+backend/.env.production
+backend/Homestead.json
+backend/Homestead.yaml
+backend/auth.json
+backend/npm-debug.log*
+backend/yarn-error.log*
+backend/.fleet/
+backend/.idea/
+backend/.nova/
+backend/.vscode/
+backend/.zed/
+
+# SQLite databases (local development only)
+*.sqlite
+*.sqlite3
+*.db
+
+# Additional environment files
+frontend/.env.*
+backend/.env.*
+
+# Exclude project README from GitHub
+/README.md

@@ -1,0 +1,150 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+
+    --color-brand-50: #fff4f8;
+    --color-brand-100: #fde8f0;
+    --color-brand-200: #f8dce8;
+    --color-brand-300: #f4bfd6;
+    --color-brand-400: #f18ab8;
+    --color-brand-500: #e91e63;
+    --color-brand-600: #d81b60;
+    --color-brand-700: #c2185b;
+    --color-brand-800: #9d174d;
+    --color-brand-900: #831843;
+
+    --color-ink-500: #8a7a82;
+    --color-ink-700: #5b4a52;
+    --color-ink-900: #333333;
+
+    --shadow-soft: 0 18px 45px -24px rgba(194, 24, 91, 0.35);
+    --shadow-card: 0 12px 35px -24px rgba(51, 51, 51, 0.28);
+}
+
+@layer base {
+    [x-cloak] {
+        display: none !important;
+    }
+
+    body {
+        -webkit-font-smoothing: antialiased;
+    }
+
+    ::selection {
+        background-color: #f8dce8;
+        color: #831843;
+    }
+
+    input[type='date']::-webkit-calendar-picker-indicator,
+    input[type='time']::-webkit-calendar-picker-indicator {
+        cursor: pointer;
+        opacity: 0.55;
+    }
+}
+
+@layer components {
+    .btn-primary {
+        @apply inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-brand-500 to-brand-700 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-brand-500/20 transition duration-200 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-brand-500/25 focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-200 disabled:cursor-not-allowed disabled:opacity-60;
+    }
+
+    .btn-secondary {
+        @apply inline-flex items-center justify-center gap-2 rounded-xl border border-brand-200 bg-white px-5 py-2.5 text-sm font-semibold text-brand-700 shadow-sm transition duration-200 hover:border-brand-300 hover:bg-brand-50 focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-100;
+    }
+
+    .btn-ghost {
+        @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold text-ink-500 transition hover:bg-brand-50 hover:text-brand-700 focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-100;
+    }
+
+    .btn-danger {
+        @apply inline-flex items-center justify-center gap-2 rounded-xl bg-rose-600 px-4 py-2.5 text-sm font-semibold text-white shadow-lg shadow-rose-500/20 transition hover:bg-rose-700 focus:outline-none focus-visible:ring-4 focus-visible:ring-rose-200;
+    }
+
+    .card {
+        @apply rounded-2xl border border-brand-100/80 bg-white shadow-[0_12px_35px_-24px_rgba(51,51,51,0.28)];
+    }
+
+    .card-hover {
+        @apply transition duration-200 hover:-translate-y-0.5 hover:border-brand-200 hover:shadow-soft;
+    }
+
+    .input {
+        @apply w-full rounded-xl border border-brand-100 bg-white px-4 py-2.5 text-sm text-ink-900 shadow-sm transition placeholder:text-slate-400 focus:border-brand-400 focus:outline-none focus:ring-4 focus:ring-brand-100;
+    }
+
+    .label {
+        @apply mb-1.5 block text-xs font-semibold tracking-wide text-ink-500 uppercase;
+    }
+
+    .error-text {
+        @apply mt-1.5 flex items-start gap-1 text-xs font-medium text-rose-600;
+    }
+
+    .badge {
+        @apply inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[11px] font-semibold ring-1 ring-inset;
+    }
+
+    .nav-link {
+        @apply flex items-center gap-3 rounded-xl px-3.5 py-2.5 text-sm font-medium text-ink-500 transition duration-200 hover:bg-brand-50 hover:text-brand-700;
+    }
+
+    .nav-link-active {
+        @apply bg-gradient-to-r from-brand-500 to-brand-700 text-white shadow-lg shadow-brand-500/20 hover:from-brand-500 hover:to-brand-700 hover:text-white;
+    }
+
+    .page-title {
+        @apply text-2xl font-bold tracking-tight text-ink-900 sm:text-[28px];
+    }
+
+    .section-title {
+        @apply text-base font-semibold text-ink-900;
+    }
+
+    .muted {
+        @apply text-sm text-ink-500;
+    }
+
+    .icon-button {
+        @apply inline-flex h-9 w-9 items-center justify-center rounded-lg text-ink-500 transition hover:bg-brand-50 hover:text-brand-700 focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-100;
+    }
+
+    .checkbox-circle {
+        @apply flex h-6 w-6 shrink-0 items-center justify-center rounded-full border-2 border-brand-200 text-transparent transition hover:border-brand-400 focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-100;
+    }
+
+    .checkbox-circle-done {
+        @apply border-brand-500 bg-brand-500 text-white;
+    }
+
+    .chip {
+        @apply inline-flex items-center gap-1.5 rounded-full border border-brand-100 bg-white px-3 py-1.5 text-xs font-medium text-ink-500 transition hover:border-brand-200 hover:text-brand-700;
+    }
+
+    .chip-active {
+        @apply border-brand-500 bg-brand-500 text-white hover:border-brand-600 hover:text-white;
+    }
+
+    .table-wrap {
+        @apply overflow-x-auto;
+    }
+
+    .pagination svg {
+        @apply h-4 w-4;
+    }
+}
+
+@layer utilities {
+    .text-balance {
+        text-wrap: balance;
+    }
+
+    .bg-dots {
+        background-image: radial-gradient(rgba(233, 30, 99, 0.12) 1px, transparent 1px);
+        background-size: 18px 18px;
+    }
+}
